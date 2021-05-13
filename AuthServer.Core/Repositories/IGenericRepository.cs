@@ -1,12 +1,12 @@
 using System;
-using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace AuthServer.Core.Repositories
 {
-    public class IGenericRepository<TEntity> where TEntity: class
+    public interface IGenericRepository<TEntity> where TEntity: class
     {
         Task<TEntity> GetByIdAsync(int id);
 
