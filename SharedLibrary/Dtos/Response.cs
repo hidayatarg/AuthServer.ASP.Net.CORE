@@ -11,9 +11,9 @@ namespace SharedLibrary.Dtos
         
         // is used to control the success in place of status for fast
         [JsonIgnore]
-        public bool IsSuccessful { get; set; }
+        public bool IsSuccessful { get; private set; }
         
-        public ErrorDto Error { get; set; }
+        public ErrorDto Error { get; private set; }
         
         // success overloads
         public static Response<T> Success(T data, int statusCode)
@@ -43,5 +43,6 @@ namespace SharedLibrary.Dtos
 
             return new Response<T> {  Error = errorDto, StatusCode = statusCode, IsSuccessful = false};
         }
+        
     }
 }

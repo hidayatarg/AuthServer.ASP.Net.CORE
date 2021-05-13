@@ -25,5 +25,13 @@ namespace SharedLibrary.Dtos
             Errors = errors;
             IsShow = isShow;
         }
+        
+        // * private set can be used to set via methods
+        // * here we set these properties (fields) via constructor so we do not need the set
+        /* code block
+        public void test()
+        {
+            Errors = new List<string>();
+        } */
     }
 }
