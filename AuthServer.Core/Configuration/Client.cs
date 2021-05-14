@@ -1,0 +1,14 @@
+using System.Collections.Generic;
+
+namespace AuthServer.Core.Configuration
+{
+    public class Client
+    {
+        public string Id { get; set; }
+        
+        public string Secret { get; set; }
+        
+        // www.neo.com www.neoa.com
+        public List<string> Audiences { get; set; }
+    }
+}
