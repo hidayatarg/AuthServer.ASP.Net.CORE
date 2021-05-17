@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace AuthServer.Core.Models
 {
@@ -10,4 +11,5 @@ namespace AuthServer.Core.Models
         public int Stock { get; set; }
         public string UserId { get; set; }
     }
+    
 }

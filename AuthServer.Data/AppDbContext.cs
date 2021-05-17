@@ -18,6 +18,9 @@ namespace AuthServer.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            //apply configurations
+
+            builder.ApplyConfigurationsFromAssembly(GetType().Assembly);
             base.OnModelCreating(builder);
         }
     }
