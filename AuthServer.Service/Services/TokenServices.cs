@@ -38,7 +38,7 @@ namespace AuthServer.Service.Services
             return Convert.ToBase64String(numberBytes);
         }
 
-        private IEnumerable<Claim> GetClaim(UserApp userApp, List<string> audience)
+        private IEnumerable<Claim> GetClaims(UserApp userApp, List<string> audience)
         {
             // all data to add in the payload as claim
             var userList = new List<Claim>
@@ -53,6 +53,19 @@ namespace AuthServer.Service.Services
             userList.AddRange(audience.Select(x => new Claim(JwtRegisteredClaimNames.Aud, x)));
 
             return userList;
+        }
+
+        private IEnumerable<Claim> GetClaimsByClient(Client client)
+        {
+            var claims = new List<Claim>();
+            claims.AddRange(client.Audiences.Select(x => new Claim(JwtRegisteredClaimNames.Aud, x)));
+            // random Guid
+            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString());
+            // subject => token belongs to
+            new Claim(JwtRegisteredClaimNames.Sub, client.Id.ToString());
+
+            return claims;
+
         }
         
         public TokenDto CreateToken(UserApp userApp)
