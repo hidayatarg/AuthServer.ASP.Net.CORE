@@ -30,7 +30,7 @@ namespace AuthServer.API
         {
             // Take the configuration from the appsetting.json
             services.Configure<CustomTokenOption>(Configuration.GetSection("TokenOption"));
-            services.Configure<Client>(Configuration.GetSection("Client"));
+            services.Configure<List<Client>>(Configuration.GetSection("Client"));
             
             services.AddControllers();
             services.AddSwaggerGen(c =>
