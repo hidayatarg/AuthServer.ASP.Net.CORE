@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AuthServer.Core.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +30,7 @@ namespace AuthServer.API
         {
             // Take the configuration from the appsetting.json
             services.Configure<CustomTokenOption>(Configuration.GetSection("TokenOption"));
+            services.Configure<Client>(Configuration.GetSection("Client"));
             
             services.AddControllers();
             services.AddSwaggerGen(c =>
