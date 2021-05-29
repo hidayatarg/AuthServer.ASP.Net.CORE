@@ -4,8 +4,8 @@ Private Set : Helps to set a property via a method. You dont need private set wh
 Download docker image for sql server and activate it
 ```docker
 docker pull microsoft/mssql-server-linux
-docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=ProductApi(!)' -e 'MSSQL_PID=Express' -p 1433:1433 --name=catalogdb microsoft/mssql-server-linux
-docker start catalogdb
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=ProductApi(!)' -e 'MSSQL_PID=Express' -p 1433:1433 --name=catalog microsoft/mssql-server-linux
+docker start catalog
 
 ```
 
@@ -16,7 +16,6 @@ docker start catalogdb
 
 ### Migration
 It will create the database with name of mentioned in API `AppSetting.json`
-
 
 
 ### Best Practices
