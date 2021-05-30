@@ -14,6 +14,8 @@ namespace AuthServer.Data
 
         public DbSet<UserRefreshToken> UserRefreshTokens { get; set; }
         
+        public DbSet<Product> Products { get; set; }
+        
         // override
 
         protected override void OnModelCreating(ModelBuilder builder)

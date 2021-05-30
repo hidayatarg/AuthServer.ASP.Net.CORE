@@ -9,7 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AuthServer.API.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
+    [ApiController]
     public class UserController : CustomBaseController
     {
         // DI
